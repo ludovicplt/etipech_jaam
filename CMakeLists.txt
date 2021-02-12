@@ -22,7 +22,20 @@ include_directories("${PROJECT_BINARY_DIR}")
 
 # Define sources and executable
 set(EXECUTABLE_NAME "etipech_jaajm")
-add_executable(${EXECUTABLE_NAME} src/main.cpp)
+add_executable(${EXECUTABLE_NAME}
+        src/Main.cpp
+        src/Display.cpp
+        src/Application.cpp
+        src/Animation.cpp
+        src/Util/Random.cpp
+        src/States/Playing_State.cpp
+        src/States/Splash_Screen.cpp
+        src/States/State_Base.cpp
+        src/Resource_Managers/Font_Manager.cpp
+        src/Resource_Managers/Resource_Manager.cpp
+        src/Resource_Managers/Sound_Manager.cpp
+        src/Resource_Managers/Texture_Manager.cpp
+        )
 
 
 # Detect and add SFML
