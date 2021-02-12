@@ -17,7 +17,7 @@ jobs:
         
       - name: Install SFML
         working-directory: ${{ runner.temp }}
-        run: git clone https://github.com/SFML/SFML.git --branch=master && cd SFML && mkdir build && cd build && cmake .. && sudo make install -j16
+        run: sudo apt install -y libsfml-dev && sudo ldconfig
         
       - uses: actions/checkout@v2
 
