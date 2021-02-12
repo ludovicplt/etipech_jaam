@@ -12,8 +12,7 @@ void Animation::addFrame(const sf::IntRect& frame, float timeToNextFrame)
 
 const sf::IntRect Animation::getFrame()
 {
-    if (m_timer.getElapsedTime().asSeconds() >= m_frames[m_currentFrame].timeToNextFrame)
-    {
+    if (m_timer.getElapsedTime().asSeconds() >= m_frames[m_currentFrame].timeToNextFrame) {
         m_currentFrame++;
         if (m_currentFrame == m_frames.size() )
             m_currentFrame = 0;

@@ -1,13 +1,13 @@
 #ifndef PLAYING_STATE_H_INCLUDED
 #define PLAYING_STATE_H_INCLUDED
 
-#include "State_Base.h"
+#include "StateBase.h"
 
 #include "../Animation.h"
 
 namespace State
 {
-    class Playing : public State_Base
+    class Playing : public StateBase
     {
         public:
             Playing (Application& application);

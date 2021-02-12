@@ -3,17 +3,17 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../Resource_Managers/Resource_Holder.h"
+#include "../ResourceManagers/ResourceHolder.h"
 
 class Application;
 
 namespace State
 {
-    class State_Base
+    class StateBase
     {
         public:
-            State_Base(Application& app);
-            virtual ~State_Base() {}
+            StateBase(Application& app);
+            virtual ~StateBase() {}
 
             virtual void input  (const sf::Event& e)    = 0;
             virtual void input  ()                      = 0;
@@ -21,9 +21,9 @@ namespace State
             virtual void draw   ()                      = 0;
 
         protected:
-            const sf::Texture&      getTexture (Texture_ID id) const;
-            const sf::Font&         getFont    (Font_ID    id) const;
-            const sf::SoundBuffer&  getSound   (Sound_ID   id) const;
+            const sf::Texture&      getTexture (TextureID id) const;
+            const sf::Font&         getFont    (FontID    id) const;
+            const sf::SoundBuffer&  getSound   (SoundID    id) const;
 
         protected:
             Application* m_p_application;

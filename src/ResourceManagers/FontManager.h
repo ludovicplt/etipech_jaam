@@ -3,17 +3,17 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Resource_Manager.h"
+#include "ResourceManager.h"
 
-enum class Font_ID
+enum class FontID
 {
-    RS
+    rs
 };
 
-class Font_Manager : public Resource_Manager<sf::Font, Font_ID>
+class FontManager : public ResourceManager<sf::Font, FontID>
 {
     public:
-        Font_Manager();
+        FontManager();
 };
 
 

@@ -6,7 +6,7 @@
 
 namespace State
 {
-    class State_Base;
+    class StateBase;
 }
 
 namespace Display
@@ -24,7 +24,7 @@ namespace Display
     void draw(const sf::Drawable& drawable);
 
 
-    void pollEvents(State::State_Base& gameState);
+    void pollEvents(State::StateBase& gameState);
 
     constexpr uint16_t WIDTH  = 1280;
     constexpr uint16_t HEIGHT = 720;

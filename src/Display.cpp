@@ -1,6 +1,6 @@
 #include "Display.h"
 
-#include "States/State_Base.h"
+#include "States/StateBase.h"
 
 namespace Display
 {
@@ -8,10 +8,8 @@ namespace Display
     {
         sf::RenderWindow window;
 
-        void checkForClose(const sf::Event& e)
-        {
-            if (e.type == sf::Event::Closed)
-            {
+        void checkForClose(const sf::Event& e) {
+            if (e.type == sf::Event::Closed) {
                 window.close();
             }
         }
@@ -45,11 +43,10 @@ namespace Display
         window.draw(drawable);
     }
 
-    void pollEvents(State::State_Base& gameState)
+    void pollEvents(State::StateBase& gameState)
     {
         sf::Event e;
-        while (window.pollEvent(e))
-        {
+        while (window.pollEvent(e)) {
             gameState.input(e);
             checkForClose(e);
         }

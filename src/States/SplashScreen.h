@@ -7,12 +7,12 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include "State_Base.h"
+#include "StateBase.h"
 
 
 namespace State
 {
-    class Splash_Screen : public State_Base
+    class SplashScreen : public StateBase
     {
         class Splash
         {
@@ -31,7 +31,7 @@ namespace State
                 std::unique_ptr<sf::Sound> m_sound;
         };
 
-        enum class Splash_State
+        enum class SplashState
         {
             Enter,
             Active,
@@ -39,7 +39,7 @@ namespace State
         };
 
         public:
-            Splash_Screen (Application& application);
+            SplashScreen (Application& application);
 
             void input  (const sf::Event& e);
             void input  ();
@@ -49,7 +49,7 @@ namespace State
         private:
             std::stack<Splash>  m_splashes;
             sf::RectangleShape  m_fadeSprite;
-            Splash_State        m_currSplashState   = Splash_State::Enter;
+            SplashState         m_currSplashState   = SplashState::Enter;
             int                 m_currAlphaValue    = 255;
     };
 }

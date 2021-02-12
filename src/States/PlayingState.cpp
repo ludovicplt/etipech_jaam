@@ -1,23 +1,22 @@
-#include "Playing_State.h"
+#include "PlayingState.h"
 
-#include "../Resource_Managers/Resource_Manager.h"
+#include "../ResourceManagers/ResourceManager.h"
 #include "../Application.h"
 #include "../Display.h"
 
 namespace State
 {
-    Playing::Playing(Application& application)
-    :   State_Base (application)
+    Playing::Playing(Application& application) :
+        StateBase (application)
     {
-        m_animSprite.setTexture(&getTexture(Texture_ID::Arrow_Test));
+        m_animSprite.setTexture(&getTexture(TextureID::arrowTest));
         m_animSprite.setSize({500, 500});
 
-        for (int i = 0; i < 4 ; i++)
-        {
+        for (int i = 0; i < 4 ; i++) {
             m_anim.addFrame({i * 16, 0, 16, 16}, 0.1);
         }
 
-        m_text.setFont(getFont(Font_ID::RS));
+        m_text.setFont(getFont(FontID::rs));
         m_text.setString("Test.");
     }
 
