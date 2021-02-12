@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install cmake && g++
+        run: sudo apt install -y cmake g++
+        
+      - name: Install SFML
+        working-directory: ${{ runner.temp }}
+        run: git clone https://github.com/SFML/SFML.git --branch=master && cd SMFL && mkdir build && cd build && cmake .. && sudo make install -j16
+        
+      - uses: actions/checkout@v2
+
+      - run: mkdir build && cd build && cmake .. && make -j16
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: build/etipech_jaajm
