@@ -6,7 +6,7 @@
 
 namespace State
 {
-    Playing::Playing(Application& application):
+    Playing::Playing(Application& application) :
         StateBase (application)
     {
         m_animSprite.setTexture(&getTexture(TextureID::arrowTest));
