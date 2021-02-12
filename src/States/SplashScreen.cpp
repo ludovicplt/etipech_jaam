@@ -50,7 +50,6 @@ namespace State
         m_fadeSprite.setFillColor({0, 0, 0,255});
         m_fadeSprite.setSize({Display::WIDTH, Display::HEIGHT});
 
-        m_splashes.push({0.3, getTexture(TextureID::splashSFML)});
         m_splashes.push({1.4, getTexture(TextureID::splashMH), getSound(SoundID::splashMadeBy)});
     }
 
