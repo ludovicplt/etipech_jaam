@@ -6,7 +6,7 @@
 
 namespace State
 {
-    SplashScreen::Splash::Splash(float time, const sf::Texture& splash):
+    SplashScreen::Splash::Splash(float time, const sf::Texture& splash) :
         m_time (time)
     {
         m_sprite.setSize({Display::WIDTH, Display::HEIGHT});
@@ -14,7 +14,7 @@ namespace State
     }
 
 
-    SplashScreen::Splash::Splash(float time, const sf::Texture& splash, const sf::SoundBuffer& sound):
+    SplashScreen::Splash::Splash(float time, const sf::Texture& splash, const sf::SoundBuffer& sound) :
         m_time (time)
     {
         m_sprite.setSize({Display::WIDTH, Display::HEIGHT});
@@ -44,7 +44,7 @@ namespace State
     }
 
 
-    SplashScreen::SplashScreen(Application& application):
+    SplashScreen::SplashScreen(Application& application) :
         StateBase (application)
     {
         m_fadeSprite.setFillColor({0, 0, 0,255});
