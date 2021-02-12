@@ -50,8 +50,8 @@ namespace State
         m_fadeSprite.setFillColor({0, 0, 0,255});
         m_fadeSprite.setSize({Display::WIDTH, Display::HEIGHT});
 
-        m_splashes.push({0.3, getTexture(TextureID::Splash_SFML)});
-        m_splashes.push({1.4, getTexture(TextureID::Splash_MH), getSound(SoundID::Splash_Made_By)});
+        m_splashes.push({0.3, getTexture(TextureID::splashSFML)});
+        m_splashes.push({1.4, getTexture(TextureID::splashMH), getSound(SoundID::splashMadeBy)});
     }
 
     void SplashScreen::input(const sf::Event& e)

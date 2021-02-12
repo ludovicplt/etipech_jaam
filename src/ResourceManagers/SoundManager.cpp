@@ -4,5 +4,5 @@ SoundManager::SoundManager()
 {
     std::string path ("../Res/Sounds/");
 
-    registerResource(SoundID::Splash_Made_By, path + "MadeBy.ogg");
+    registerResource(SoundID::splashMadeBy, path + "MadeBy.ogg");
 }

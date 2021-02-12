@@ -4,5 +4,5 @@ FontManager::FontManager()
 {
     std::string path ("../Res/Fonts/");
 
-    registerResource(FontID::RS, path + "rs.ttf");
+    registerResource(FontID::rs, path + "rs.ttf");
 }

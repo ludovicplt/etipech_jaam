@@ -7,7 +7,7 @@
 
 enum class FontID
 {
-    RS
+    rs
 };
 
 class FontManager : public ResourceManager<sf::Font, FontID>

@@ -7,7 +7,7 @@
 
 enum class SoundID
 {
-    Splash_Made_By
+    splashMadeBy
 };
 
 class SoundManager : public ResourceManager<sf::SoundBuffer, SoundID>
