@@ -8,7 +8,7 @@
 #include <SFML/Audio.hpp>
 
 template<typename Resource, typename Enum>
-class Resource_Manager
+class ResourceManager
 {
     public:
         const Resource& get(Enum e) const

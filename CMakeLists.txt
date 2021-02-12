@@ -28,13 +28,13 @@ add_executable(${EXECUTABLE_NAME}
         src/Application.cpp
         src/Animation.cpp
         src/Util/Random.cpp
-        src/States/Playing_State.cpp
-        src/States/Splash_Screen.cpp
-        src/States/State_Base.cpp
-        src/Resource_Managers/Font_Manager.cpp
-        src/Resource_Managers/Resource_Manager.cpp
-        src/Resource_Managers/Sound_Manager.cpp
-        src/Resource_Managers/Texture_Manager.cpp
+        src/States/PlayingState.cpp
+        src/States/SplashScreen.cpp
+        src/States/StateBase.cpp
+        src/ResourceManagers/FontManager.cpp
+        src/ResourceManagers/ResourceManager.cpp
+        src/ResourceManagers/SoundManager.cpp
+        src/ResourceManagers/TextureManager.cpp
         )
 
 

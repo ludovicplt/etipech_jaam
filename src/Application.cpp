@@ -5,7 +5,7 @@
 #include "Display.h"
 #include "Util/Random.h"
 
-#include "States/Splash_Screen.h"
+#include "States/SplashScreen.h"
 
 namespace
 {
@@ -17,8 +17,7 @@ namespace
 
         numFrames++;
 
-        if (printTimer.getElapsedTime().asSeconds() >= 1.0f)
-        {
+        if (printTimer.getElapsedTime().asSeconds() >= 1.0f) {
             auto fps = (float)numFrames / timer.getElapsedTime().asSeconds();
             printTimer.restart();
             std::cout << fps << std::endl;
@@ -34,14 +33,13 @@ Application::Application()
     Display::init();
     Random::init();
 
-    pushState(std::make_unique<State::Splash_Screen>(*this));
+    pushState(std::make_unique<State::SplashScreen>(*this));
 }
 
 void Application::runMainLoop()
 {
     sf::Clock c;
-    while (Display::isOpen())
-    {
+    while (Display::isOpen()) {
         auto dt = c.restart().asSeconds();
 
         Display::clear();
@@ -58,12 +56,12 @@ void Application::runMainLoop()
 }
 
 
-const Resource_Holder& Application::getResources() const
+const ResourceHolder& Application::getResources() const
 {
     return m_resourceHolder;
 }
 
-void Application::pushState(std::unique_ptr<State::State_Base> state)
+void Application::pushState(std::unique_ptr<State::StateBase> state)
 {
     m_states.push(std::move(state));
 }

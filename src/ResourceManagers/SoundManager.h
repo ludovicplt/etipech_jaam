@@ -3,17 +3,17 @@
 
 #include <SFML/Audio.hpp>
 
-#include "Resource_Manager.h"
+#include "ResourceManager.h"
 
-enum class Sound_ID
+enum class SoundID
 {
     Splash_Made_By
 };
 
-class Sound_Manager : public Resource_Manager<sf::SoundBuffer, Sound_ID>
+class SoundManager : public ResourceManager<sf::SoundBuffer, SoundID>
 {
     public:
-        Sound_Manager();
+        SoundManager();
 };
 
 #endif // SOUND_MANAGER_H_INCLUDED

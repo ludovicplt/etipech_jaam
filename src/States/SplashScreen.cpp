@@ -1,12 +1,12 @@
-#include "Splash_Screen.h"
+#include "SplashScreen.h"
 
 #include "../Display.h"
 #include "../Application.h"
-#include "Playing_State.h"
+#include "PlayingState.h"
 
 namespace State
 {
-    Splash_Screen::Splash::Splash(float time, const sf::Texture& splash)
+    SplashScreen::Splash::Splash(float time, const sf::Texture& splash)
     :   m_time (time)
     {
         m_sprite.setSize({Display::WIDTH, Display::HEIGHT});
@@ -14,7 +14,7 @@ namespace State
     }
 
 
-    Splash_Screen::Splash::Splash(float time, const sf::Texture& splash, const sf::SoundBuffer& sound)
+    SplashScreen::Splash::Splash(float time, const sf::Texture& splash, const sf::SoundBuffer& sound)
     :   m_time (time)
     {
         m_sprite.setSize({Display::WIDTH, Display::HEIGHT});
@@ -23,7 +23,7 @@ namespace State
         m_sound = std::make_unique<sf::Sound>(sound);
     }
 
-    void Splash_Screen::Splash::start()
+    void SplashScreen::Splash::start()
     {
         if (m_sound)
         {
@@ -32,40 +32,40 @@ namespace State
         m_clock.restart();
     }
 
-    void Splash_Screen::Splash::draw()
+    void SplashScreen::Splash::draw()
     {
         Display::draw(m_sprite);
     }
 
 
-    bool Splash_Screen::Splash::isOver()
+    bool SplashScreen::Splash::isOver()
     {
         return (m_clock.getElapsedTime().asSeconds() >= m_time);
     }
 
 
-    Splash_Screen::Splash_Screen(Application& application)
-    :   State_Base (application)
+    SplashScreen::SplashScreen(Application& application)
+    : StateBase (application)
     {
         m_fadeSprite.setFillColor({0, 0, 0,255});
         m_fadeSprite.setSize({Display::WIDTH, Display::HEIGHT});
 
-        m_splashes.push({0.3, getTexture(Texture_ID::Splash_SFML)});
-        m_splashes.push({1.4, getTexture(Texture_ID::Splash_MH), getSound(Sound_ID::Splash_Made_By)});
+        m_splashes.push({0.3, getTexture(TextureID::Splash_SFML)});
+        m_splashes.push({1.4, getTexture(TextureID::Splash_MH), getSound(SoundID::Splash_Made_By)});
     }
 
-    void Splash_Screen::input(const sf::Event& e)
+    void SplashScreen::input(const sf::Event& e)
     { }
 
-    void Splash_Screen::input()
+    void SplashScreen::input()
     { }
 
-    void Splash_Screen::update(float dt)
+    void SplashScreen::update(float dt)
     {
 
     }
 
-    void Splash_Screen::draw()
+    void SplashScreen::draw()
     {
         if (!m_splashes.empty())
         {

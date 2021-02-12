@@ -1,6 +1,6 @@
 #include "Display.h"
 
-#include "States/State_Base.h"
+#include "States/StateBase.h"
 
 namespace Display
 {
@@ -45,7 +45,7 @@ namespace Display
         window.draw(drawable);
     }
 
-    void pollEvents(State::State_Base& gameState)
+    void pollEvents(State::StateBase& gameState)
     {
         sf::Event e;
         while (window.pollEvent(e))

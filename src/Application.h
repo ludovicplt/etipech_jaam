@@ -4,8 +4,8 @@
 #include <memory>
 #include <stack>
 
-#include "Resource_Managers/Resource_Holder.h"
-#include "States/State_Base.h"
+#include "ResourceManagers/ResourceHolder.h"
+#include "States/StateBase.h"
 
 class Application
 {
@@ -14,15 +14,15 @@ class Application
 
         void runMainLoop();
 
-        const Resource_Holder& getResources() const;
+        const ResourceHolder& getResources() const;
 
-        void pushState(std::unique_ptr<State::State_Base> state);
+        void pushState(std::unique_ptr<State::StateBase> state);
         void popState ();
 
     private:
-        Resource_Holder m_resourceHolder;
+        ResourceHolder m_resourceHolder;
 
-        std::stack<std::unique_ptr<State::State_Base>> m_states;
+        std::stack<std::unique_ptr<State::StateBase>> m_states;
 };
 
 #endif // APPLICATION_H_INCLUDED

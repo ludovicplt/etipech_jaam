@@ -7,12 +7,12 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#include "State_Base.h"
+#include "StateBase.h"
 
 
 namespace State
 {
-    class Splash_Screen : public State_Base
+    class SplashScreen : public StateBase
     {
         class Splash
         {
@@ -39,7 +39,7 @@ namespace State
         };
 
         public:
-            Splash_Screen (Application& application);
+            SplashScreen (Application& application);
 
             void input  (const sf::Event& e);
             void input  ();

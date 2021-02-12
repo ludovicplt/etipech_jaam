@@ -3,10 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Resource_Manager.h"
+#include "ResourceManager.h"
 
 
-enum class Texture_ID
+enum class TextureID
 {
     Splash_SFML,
     Splash_MH,
@@ -14,10 +14,10 @@ enum class Texture_ID
     Arrow_Test,
 };
 
-class Texture_Manager : public Resource_Manager<sf::Texture, Texture_ID>
+class TextureManager : public ResourceManager<sf::Texture, TextureID>
 {
     public:
-        Texture_Manager();
+        TextureManager();
 };
 
 #endif // TEXTURE_MANAGER_H_INCLUDED
