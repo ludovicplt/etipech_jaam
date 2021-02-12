@@ -31,7 +31,7 @@ namespace State
                 std::unique_ptr<sf::Sound> m_sound;
         };
 
-        enum class Splash_State
+        enum class SplashState
         {
             Enter,
             Active,
@@ -49,7 +49,7 @@ namespace State
         private:
             std::stack<Splash>  m_splashes;
             sf::RectangleShape  m_fadeSprite;
-            Splash_State        m_currSplashState   = Splash_State::Enter;
+            SplashState         m_currSplashState   = SplashState::Enter;
             int                 m_currAlphaValue    = 255;
     };
 }

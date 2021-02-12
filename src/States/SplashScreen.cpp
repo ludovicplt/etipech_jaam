@@ -70,25 +70,25 @@ namespace State
             m_splashes.top().draw();
 
             switch (m_currSplashState) {
-                case Splash_State::Enter:
+                case SplashState::Enter:
                     if (m_currAlphaValue > 0) {
                         m_fadeSprite.setFillColor({0, 0, 0, (sf::Uint8) m_currAlphaValue--});
                     } else {
-                        m_currSplashState = Splash_State::Active;
+                        m_currSplashState = SplashState::Active;
                         m_splashes.top().start();
                     }
                     break;
 
-                case Splash_State::Active:
+                case SplashState::Active:
                     if (m_splashes.top().isOver())
-                        m_currSplashState = Splash_State::Exiting;
+                        m_currSplashState = SplashState::Exiting;
                     break;
 
-                case Splash_State::Exiting:
+                case SplashState::Exiting:
                     if (m_currAlphaValue < 255) {
                         m_fadeSprite.setFillColor({0, 0, 0, (sf::Uint8) m_currAlphaValue++});
                     } else {
-                        m_currSplashState = Splash_State::Enter;
+                        m_currSplashState = SplashState::Enter;
                         m_splashes.pop();
                     }
                     break;
