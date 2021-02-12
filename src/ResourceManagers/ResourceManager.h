@@ -20,8 +20,7 @@ class ResourceManager
         void registerResource(Enum key, const std::string& filename)
         {
             Resource res;
-            if (!res.loadFromFile(filename))
-            {
+            if (!res.loadFromFile(filename)) {
                 throw std::runtime_error ("Could load resource: " + filename + "!");
             }
             m_resources.insert(std::make_pair(key, res));

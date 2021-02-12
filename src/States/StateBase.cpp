@@ -4,8 +4,8 @@
 
 namespace State
 {
-    StateBase::StateBase(Application& app)
-    :   m_p_application (&app)
+    StateBase::StateBase(Application& app):
+        m_p_application (&app)
     {
 
     }

@@ -8,10 +8,8 @@ namespace Display
     {
         sf::RenderWindow window;
 
-        void checkForClose(const sf::Event& e)
-        {
-            if (e.type == sf::Event::Closed)
-            {
+        void checkForClose(const sf::Event& e) {
+            if (e.type == sf::Event::Closed) {
                 window.close();
             }
         }
@@ -48,8 +46,7 @@ namespace Display
     void pollEvents(State::StateBase& gameState)
     {
         sf::Event e;
-        while (window.pollEvent(e))
-        {
+        while (window.pollEvent(e)) {
             gameState.input(e);
             checkForClose(e);
         }

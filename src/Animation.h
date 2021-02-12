@@ -9,9 +9,10 @@ class Animation
 {
     struct Frame
     {
-        Frame(const sf::IntRect& frame, float timeToNextFrame)
-        :   frame           (frame)
-        ,   timeToNextFrame (timeToNextFrame) {}
+        Frame(const sf::IntRect& frame, float timeToNextFrame) :
+            frame(frame),
+            timeToNextFrame (timeToNextFrame)
+        {}
 
         sf::IntRect frame;
         float       timeToNextFrame;
