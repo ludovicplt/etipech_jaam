@@ -9,6 +9,7 @@
 
 #include "ICollidable.h"
 #include "States/StateBase.h"
+#include "Animation.h"
 
 namespace State {
     class PlayerController : public StateBase {
@@ -20,13 +21,21 @@ namespace State {
             left
         };
     private:
-        Direction currentdirection;
+        Direction currentdirection = right;
+        sf::RectangleShape playerSprite;
+        Animation playerUpAnim;
+        Animation playerDownAnim;
+        Animation playerRightAnim;
+        Animation playerLeftAnim;
+        const float speed = 2000.f;
+        bool requestMove = false;
     public:
-        PlayerController();
+        PlayerController(Application &app);
 
-        std::list<ICollidable> collideList;
+        std::list<std::unique_ptr<ICollidable>> collideList;
 
-        bool move(Direction direction);
+        void move(Direction direction);
+        void addCollidable(std::unique_ptr<ICollidable> collidable);
 
         void input(const sf::Event& e);
         void input();

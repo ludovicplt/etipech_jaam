@@ -9,15 +9,20 @@
 
 class ICollidable {
 public:
-    sf::Rect<float> pos;
-    bool isColliding;
+    sf::Rect<float> pos = {0, 0, 0, 0};
+    bool isColliding = true;
 
     virtual void draw() const = 0;
     virtual void update() = 0;
 
+    inline virtual sf::Rect<float> getPos() const
+    {
+        return pos;
+    }
+
     inline virtual bool collides(const sf::Rect<float> &obj) const
     {
-        return pos.intersects(obj);
+        return getPos().intersects(obj);
     }
 
     inline virtual bool collides(const sf::Rect<int> &obj) const
@@ -27,12 +32,12 @@ public:
 
     inline virtual bool collides(const ICollidable &collidable) const
     {
-        return collides(collidable.pos);
+        return collides(collidable.getPos());
     }
 
     inline virtual bool collides(const sf::Vector2<float> &obj) const
     {
-        return pos.contains(obj);
+        return getPos().contains(obj);
     }
 
     inline virtual bool collides(const sf::Vector2<int> &obj) const
@@ -47,7 +52,31 @@ public:
 
     inline virtual bool collides(float x, float y) const
     {
-        return pos.contains(x, y);
+        return getPos().contains(x, y);
+    }
+
+    inline virtual float getMaxDstLeft(const sf::Rect<float> &obj, float maxDst)
+    {
+        float newMaxDst = obj.left - (getPos().left + getPos().width);
+        return maxDst < newMaxDst ? maxDst : newMaxDst;
+    }
+
+    inline virtual float getMaxDstRight(const sf::Rect<float> &obj, float maxDst)
+    {
+        float newMaxDst = getPos().left - (obj.left + obj.width);
+        return maxDst < newMaxDst ? maxDst : newMaxDst;
+    }
+
+    inline virtual float getMaxDstUp(const sf::Rect<float> &obj, float maxDst)
+    {
+        float newMaxDst = obj.top - (getPos().top + getPos().height);
+        return maxDst < newMaxDst ? maxDst : newMaxDst;
+    }
+
+    inline virtual float getMaxDstDown(const sf::Rect<float> &obj, float maxDst)
+    {
+        float newMaxDst = getPos().top - (obj.top + obj.height);
+        return maxDst < newMaxDst ? maxDst : newMaxDst;
     }
 
 };
