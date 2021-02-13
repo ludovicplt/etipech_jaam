@@ -5,8 +5,10 @@
 #include <iostream>
 
 #include "MenuState.h"
+#include "PlayingState.h"
 
 #include "../Display.h"
+#include "../Application.h"
 
 namespace State {
     Menu::Menu(Application& application) :
@@ -66,8 +68,7 @@ namespace State {
     {
         switch (option) {
             case chosenOption::play:
-                // TODO
-                std::cerr << "Not implemented yet !" << std::endl;
+                m_p_application->pushState(std::make_unique<State::Playing>(*m_p_application));
                 break;
             case chosenOption::option:
                 // TODO

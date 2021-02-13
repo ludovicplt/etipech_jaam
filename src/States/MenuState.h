@@ -5,6 +5,9 @@
 #ifndef MYPROJECT_MENUSTATE_H
 #define MYPROJECT_MENUSTATE_H
 
+#include <stack>
+#include <memory>
+
 #include "StateBase.h"
 
 namespace State {
