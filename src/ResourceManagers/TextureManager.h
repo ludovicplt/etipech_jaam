@@ -10,8 +10,9 @@ enum class TextureID
 {
     splashSFML,
     splashMH,
-
     arrowTest,
+    test,
+    character,
 };
 
 class TextureManager : public ResourceManager<sf::Texture, TextureID>

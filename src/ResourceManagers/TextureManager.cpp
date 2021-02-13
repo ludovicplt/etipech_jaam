@@ -7,4 +7,6 @@ TextureManager::TextureManager()
     registerResource(TextureID::splashSFML, path + "Splash/SFML.png");
     registerResource(TextureID::splashMH, path + "Splash/risitas.png");
     registerResource(TextureID::arrowTest, path + "Arrows.png");
+    registerResource(TextureID::test, path + "test.png");
+    registerResource(TextureID::character, path + "personnage.png");
 }

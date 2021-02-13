@@ -29,8 +29,8 @@ add_executable(${EXECUTABLE_NAME}
         src/Animation.cpp
         src/Util/Random.cpp
         src/States/PlayingState.cpp
-        src/States/SplashScreen.cpp
         src/States/StateBase.cpp
+        src/States/FutureScreen.cpp
         src/ResourceManagers/FontManager.cpp
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp
