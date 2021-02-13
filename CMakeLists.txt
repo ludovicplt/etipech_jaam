@@ -35,7 +35,7 @@ add_executable(${EXECUTABLE_NAME}
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp
         src/ResourceManagers/TextureManager.cpp
-        )
+        src/States/MenuState.cpp src/States/MenuState.h)
 
 
 # Detect and add SFML

@@ -26,6 +26,8 @@ namespace Display
 
     void pollEvents(State::StateBase& gameState);
 
+    sf::RenderWindow &getWindow();
+
     constexpr uint16_t WIDTH  = 1280;
     constexpr uint16_t HEIGHT = 720;
 }
