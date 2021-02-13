@@ -10,6 +10,7 @@
 namespace Scaling
 {
     void setSpriteSizeInPixels(sf::Sprite& sprite, sf::Vector2<int> sizeInPixels);
+    void setSpriteWidthInPixels(sf::Sprite& sprite, int width);
 }
 
 
