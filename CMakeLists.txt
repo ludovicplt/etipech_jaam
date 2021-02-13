@@ -35,7 +35,7 @@ add_executable(${EXECUTABLE_NAME}
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp
         src/ResourceManagers/TextureManager.cpp
-        src/States/MenuState.cpp src/States/MenuState.h)
+        src/States/MenuState.cpp src/States/MenuState.h src/PlayerController.cpp src/PlayerController.h src/ICollidable.cpp src/ICollidable.h src/ICollidable.cpp)
 
 
 # Detect and add SFML
