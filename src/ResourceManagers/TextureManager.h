@@ -12,6 +12,10 @@ enum class TextureID
     splashMH,
 
     arrowTest,
+
+    alexandroFlioSign,
+    alexandroFlioVehicle,
+    past2Background
 };
 
 class TextureManager : public ResourceManager<sf::Texture, TextureID>

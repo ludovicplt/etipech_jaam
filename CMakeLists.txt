@@ -31,6 +31,7 @@ add_executable(${EXECUTABLE_NAME}
         src/States/PlayingState.cpp
         src/States/SplashScreen.cpp
         src/States/StateBase.cpp
+        src/States/PastTacosCity.cpp
         src/ResourceManagers/FontManager.cpp
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp
