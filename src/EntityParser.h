@@ -6,8 +6,7 @@ namespace Entity {
     class EntityObject {
         public:
             struct Entity {
-                sf::Vector2f pos;
-                int IsCollidable;
+                sf::Rect<float> pos;
                 std::string Speech;
                 std::string Name;
             };
@@ -33,11 +32,31 @@ namespace Entity {
             Pnj(std::string filename)
             {
                 EntityObject::Entity tmp;
-                io::CSVReader<5> in("info.csv");
-                in.read_header(io::ignore_extra_column, "Name", "Position_x", "Position_y", "IsCollidable", "Speech");
+                io::CSVReader<6> in(filename);
+                in.read_header(io::ignore_extra_column, "Name", "PosX", "PosY", "SizeX", "SizeY", "Speech");
 
-                while (in.read_row(tmp.Name, tmp.pos.x, tmp.pos.y, tmp.IsCollidable, tmp.Speech))
+                while (in.read_row(tmp.Name, tmp.pos.left, tmp.pos.top, tmp.pos.width, tmp.pos.height, tmp.Speech))
                     myPnj.push_back(tmp);
+            }
+
+            bool IsIntersecting(sf::Rect<float> r1, sf::Rect<float> r2)
+            {
+                return (r1.intersects(r2));
+            }
+
+            size_t getSize(void)
+            {
+                return (myPnj.size());
+            }
+
+            sf::FloatRect getPos(int i)
+            {
+                return (myPnj[i].pos);
+            }
+
+            const std::string &getSpeech(int i)
+            {
+                return (myPnj[i].Speech);
             }
     };
 }
