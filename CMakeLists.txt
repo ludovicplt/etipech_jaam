@@ -21,7 +21,7 @@ configure_file(
 include_directories("${PROJECT_BINARY_DIR}")
 
 # Define sources and executable
-set(EXECUTABLE_NAME "etipech_jaajm")
+set(EXECUTABLE_NAME "Forgotten")
 add_executable(${EXECUTABLE_NAME}
         src/Main.cpp
         src/Display.cpp
