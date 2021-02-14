@@ -10,6 +10,7 @@
 
 #include "../Display.h"
 #include "../Application.h"
+#include "SpawnState.h"
 
 namespace State {
     Menu::Menu(Application& application) :
@@ -70,7 +71,7 @@ namespace State {
     {
         switch (option) {
             case chosenOption::play:
-                m_p_application->pushState(std::make_unique<State::PastTacosCity>(*m_p_application));
+                m_p_application->pushState(std::make_unique<State::SpawnState>(*m_p_application));
                 break;
             case chosenOption::option:
                 // TODO

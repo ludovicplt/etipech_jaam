@@ -29,10 +29,13 @@ add_executable(${EXECUTABLE_NAME}
         src/Animation.cpp
         src/Util/Random.cpp
         src/States/PlayingState.cpp
-        src/States/SplashScreen.cpp
         src/States/StateBase.cpp
         src/States/PastTacosCity.cpp
         src/States/PastOffice.cpp
+        src/States/SpawnState.cpp
+        src/States/LabEntryState.cpp
+        src/States/LabReceptionState.cpp
+        src/States/LabEndingState.cpp
         src/ResourceManagers/FontManager.cpp
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp
@@ -44,7 +47,8 @@ add_executable(${EXECUTABLE_NAME}
         src/PlayerController.cpp
         src/PlayerController.h
         src/ICollidable.h src/SFMLExtension.h
-        src/WorldObject.cpp)
+        src/WorldObject.cpp
+        src/States/SplashScreen.cpp)
 
 # Detect and add SFML
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})

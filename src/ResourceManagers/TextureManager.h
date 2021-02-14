@@ -15,7 +15,13 @@ enum class TextureID
     Office = 4,
     player = 10,
     background,
-    buttons
+    buttons,
+    sky,
+    buildings,
+    road,
+    labEntry,
+    labReception,
+    labEnding
 };
 
 class TextureManager : public ResourceManager<sf::Texture, TextureID>
