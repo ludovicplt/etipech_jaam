@@ -50,10 +50,12 @@ namespace WorldObject {
                                    tmpId,
                                    tmp.IsCollideable))
                 {
-                    tmp.sprite = new sf::Sprite;
-                    tmp.sprite->setTexture(getTexture(static_cast<TextureID>(tmpId)));
-                    tmp.sprite->setPosition(tmp.rect.left, tmp.rect.top);
-                    tmp.sprite->setScale(tmp.SpriteSize, tmp.SpriteSize);
+                    if (tmpId != 999) {
+                        tmp.sprite = new sf::Sprite;
+                        tmp.sprite->setTexture(getTexture(static_cast<TextureID>(tmpId)));
+                        tmp.sprite->setPosition(tmp.rect.left, tmp.rect.top);
+                        tmp.sprite->setScale(tmp.SpriteSize, tmp.SpriteSize);
+                    }
                     _map.push_back(tmp);
                 }
             }

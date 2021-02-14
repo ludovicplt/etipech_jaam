@@ -13,6 +13,7 @@ namespace State {
         Objects::CollidableBox _Box;
         std::unique_ptr<WorldObject::WorldLoader> world;
     public:
+        std::unique_ptr<sf::View> viewPort;
         PastOffice(Application& app);
 
         void input(const sf::Event& e);

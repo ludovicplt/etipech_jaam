@@ -1,0 +1,3 @@
+Name,      PosX, PosY, SizeX, SizeY, SpriteSize, Sprite, Collidable
+Overview,  0,    -15,    0,     0,     2.5,          4,      0
+BlockUp,   0,    0,      10000, 10,    1,          999,      1

@@ -8,4 +8,5 @@ TextureManager::TextureManager()
     registerResource(TextureID::splashMH, path + "Splash/risitas.png");
     registerResource(TextureID::arrowTest, path + "Arrows.png");
     registerResource(TextureID::player, path + "player.png");
+    registerResource(TextureID::Office, path + "Office.png");
 }
