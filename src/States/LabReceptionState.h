@@ -15,6 +15,7 @@
 #include <SFML/Audio.hpp>
 #include "../Animation.h"
 #include "../PlayerController.h"
+#include "../WorldObject.h"
 
 namespace State 
 {
@@ -51,7 +52,12 @@ namespace State
             void input() override;
             void update(float dt) override;
             void draw() override;
+
+            void setPlayerPos(sf::Vector2<float> pos) override {
+                player.setPos(pos);
+            }
         private:
+            std::unique_ptr<WorldObject::WorldLoader> world;
             sf::RectangleShape m_animSprite;
             Animation m_anim;
             PlayerController player;

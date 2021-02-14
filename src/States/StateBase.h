@@ -20,6 +20,8 @@ namespace State
             virtual void update (float dt)              = 0;
             virtual void draw   ()                      = 0;
 
+            virtual void setPlayerPos(sf::Vector2<float> pos) {}
+
         protected:
             const sf::Texture&      getTexture (TextureID id) const;
             const sf::Font&         getFont    (FontID    id) const;
