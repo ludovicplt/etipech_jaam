@@ -1,12 +1,12 @@
 /*
 ** EPITECH PROJECT, 2021
-** FutureScreen.hpp
+** SpawnState.hpp
 ** File description:
-** FutureScreen
+** SpawnState
 */
 
-#ifndef FutureScreen_H_
-#define FutureScreen_H_
+#ifndef SpawnState_H_
+#define SpawnState_H_
 
 #include <stack>
 #include <memory>
@@ -14,16 +14,17 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "../Animation.h"
+#include "../PlayerController.h"
 
 namespace State 
 {
-    class FutureScreen : public StateBase 
+    class SpawnState : public StateBase 
     {
-        class Future
+        class Spawn
         {
             public:
-                Future(float time, const sf::Texture& back);
-                Future(float time, const sf::Texture& back, const sf::SoundBuffer& sound);
+                Spawn(float time, const sf::Texture& back);
+                Spawn(float time, const sf::Texture& back, const sf::SoundBuffer& sound);
 
                 void start();
                 void draw();
@@ -44,7 +45,7 @@ namespace State
         };
 
         public:
-            FutureScreen (Application& application);
+            SpawnState (Application& application);
 
             void input(const sf::Event& e) override;
             void input() override;
@@ -53,11 +54,12 @@ namespace State
         private:
             sf::RectangleShape m_animSprite;
             Animation m_anim;
-            std::vector<Future>  m_future;
+            PlayerController player;
+            std::vector<Spawn>  m_spawn;
             sf::RectangleShape  m_fadeSprite;
             SplashState         m_currSplashState   = SplashState::Enter;
             int                 m_currAlphaValue    = 255;
     };
 }
 
-#endif /* !FutureScreen_H_ */
+#endif /* !SpawnState_H_ */

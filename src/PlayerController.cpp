@@ -13,6 +13,7 @@ State::PlayerController::PlayerController(Application &app) :
 {
     playerSprite.setTexture(&getTexture(TextureID::player));
     playerSprite.setSize({24, 62});
+    playerSprite.setPosition({0, 600});
 
     const float timeBetweenSteps = 0.25;
 

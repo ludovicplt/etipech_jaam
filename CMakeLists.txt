@@ -30,7 +30,7 @@ add_executable(${EXECUTABLE_NAME}
         src/Util/Random.cpp
         src/States/PlayingState.cpp
         src/States/StateBase.cpp
-        src/States/FutureScreen.cpp
+        src/States/SpawnState.cpp
         src/ResourceManagers/FontManager.cpp
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp

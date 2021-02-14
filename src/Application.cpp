@@ -5,7 +5,7 @@
 #include "Display.h"
 #include "Util/Random.h"
 
-#include "States/FutureScreen.h"
+#include "States/SpawnState.h"
 
 namespace
 {
@@ -33,7 +33,7 @@ Application::Application()
     Display::init();
     Random::init();
 
-    pushState(std::make_unique<State::FutureScreen>(*this));
+    pushState(std::make_unique<State::SpawnState>(*this));
 }
 
 void Application::runMainLoop()

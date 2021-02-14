@@ -11,6 +11,9 @@ enum class TextureID
     splashSFML,
     splashMH,
     arrowTest,
+    sky,
+    buildings,
+    road,
     player
 };
 
