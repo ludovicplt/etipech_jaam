@@ -9,7 +9,8 @@ namespace State
 {
     PastOffice::PastOffice(Application& application) :
         StateBase (application),
-        player(application)
+        player(application),
+        Entity("../src/maps/OfficeEntity.csv")
     {
         player.setSize({1.75, 1.75});
         player.setPos({0, 180});
@@ -18,27 +19,38 @@ namespace State
         world = std::make_unique<WorldObject::WorldLoader>("../src/maps/Office.csv", application);
         for (int i = 0; i < world->getMapSize(); i++) {
             if (world->getIsCollidable(i) == true) {
-                std::unique_ptr<Objects::CollidableBox> _Box(new Objects::CollidableBox);
-                _Box->setBounds(world->getRect(i));
-                player.addCollidable(std::move(_Box));
+                std::unique_ptr<Objects::CollidableBox> _BoxBlock(new Objects::CollidableBox);
+                _BoxBlock->setBounds(world->getRect(i));
+                player.addCollidable(std::move(_BoxBlock));
             }
         }
     }
+
+#define KEY_PRESSED(evt, kCode) (evt.type == evt.KeyPressed && evt.key.code == kCode)
 
     void PastOffice::input(const sf::Event& e)
     {
         player.input(e);
         Display::getWindow().setView(*viewPort);
+        for (int i = 0; i < Entity.getSize(); i++) {
+            if (Entity.IsIntersecting(player.getPos(), Entity.getPos(i)) && KEY_PRESSED(e, sf::Keyboard::Enter)) {
+                sf::Text text;
+                text.setString(Entity.getSpeech(i)); 
+                Display::draw(text);
+                std::cout << Entity.getSpeech(i) << std::endl;
+            }
+        }
     }
 
     void PastOffice::input()
     {
+
     }
 
     void PastOffice::update(float dt)
     {
         player.update(dt);
-        std::cout << "Pos: " << player.getPos().left << std::endl;
+        
         if (player.getPos().left >= 720 / 2.2 - 43.127)
             viewPort->setCenter(player.getPos().left, (720 / 2.2 - 50) / 2);
         Display::getWindow().setView(*viewPort);

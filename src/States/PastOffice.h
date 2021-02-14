@@ -5,13 +5,16 @@
 #include "../PlayerController.h"
 #include "../CollidableBox.h"
 #include "../WorldObject.h"
+#include "../EntityParser.h"
 
 namespace State {
     class PastOffice : public StateBase {
     private:
         PlayerController player;
-        Objects::CollidableBox _Box;
+        Objects::CollidableBox _BoxBlock;
         std::unique_ptr<WorldObject::WorldLoader> world;
+        Entity::Pnj Entity;
+        sf::Text TextBox;
     public:
         std::unique_ptr<sf::View> viewPort;
         PastOffice(Application& app);
@@ -20,6 +23,8 @@ namespace State {
         void input();
         void update(float dt);
         void draw();
+        void t_draw();
+        void t_set();
     };
 }
 
