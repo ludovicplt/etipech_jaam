@@ -14,6 +14,7 @@ class FontManager : public ResourceManager<sf::Font, FontID>
 {
     public:
         FontManager();
+
 };
 
 
