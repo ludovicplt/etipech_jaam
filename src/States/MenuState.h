@@ -28,10 +28,10 @@ namespace State {
         };
 
         chosenOption _selected = chosenOption::play;
-        sf::Text _gameTitle;
-        sf::RectangleShape _playButton;
-        sf::RectangleShape _optionButton;
-        sf::RectangleShape _quitButton;
+        sf::Sprite _playButton;
+        sf::Sprite _optionButton;
+        sf::Sprite _quitButton;
+        sf::Sprite _background;
 
         void switchOptionUp();
         void switchOptionDown();
@@ -39,7 +39,7 @@ namespace State {
         void executeButton(chosenOption option);
         void executeButton();
         void handleMouseMoved();
-        bool mouseIntersectsWithRectangle(const sf::RectangleShape &shape, const sf::Vector2f &cursorPos) const ;
+        bool mouseIntersectsWithRectangle(const sf::Sprite &shape, const sf::Vector2f &cursorPos) const ;
     };
 }
 
