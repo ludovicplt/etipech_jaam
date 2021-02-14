@@ -11,6 +11,8 @@
 #include "PlayingState.h"
 #include "../CollidableBox.h"
 #include "LabReceptionState.h"
+#include "PastOffice.h"
+#include "../EntityParser.h"
 
 namespace State 
 {
@@ -48,7 +50,10 @@ namespace State
     }
 
     LabEndingState::LabEndingState(Application &application) 
-    : StateBase (application), player(application)
+    : StateBase (application),
+      player(application),
+      warp("../src/maps/LabReceptionEntity.csv")
+
     {
         player.setSize({2, 2});
         player.setPos({400, 300});
@@ -68,6 +73,8 @@ namespace State
     void LabEndingState::input(const sf::Event& e)
     {
         player.input(e);
+        if (warp.getPos(0).intersects(player.getPos()) && e.type == e.KeyPressed && e.key.code == sf::Keyboard::Enter)
+            m_p_application->pushState(std::make_unique<State::PastOffice>(*m_p_application));
     }
 
     void LabEndingState::input()
@@ -86,7 +93,6 @@ namespace State
             app->popState();
             app->setStatePlayerPos({pos.left, 20});
         }
-
     }
 
     void LabEndingState::draw()

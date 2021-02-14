@@ -16,6 +16,7 @@
 #include "../Animation.h"
 #include "../PlayerController.h"
 #include "../WorldObject.h"
+#include "../EntityParser.h"
 
 namespace State 
 {
@@ -65,6 +66,8 @@ namespace State
             sf::RectangleShape  m_fadeSprite;
             SplashState         m_currSplashState   = SplashState::Enter;
             int                 m_currAlphaValue    = 255;
+            Entity::Pnj warp;
+
     };
 }
 

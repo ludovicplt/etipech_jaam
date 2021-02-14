@@ -13,7 +13,7 @@ namespace State
         player(application),
         Entity("../src/maps/OfficeEntity.csv")
     {
-        player.setPos({0, 180});
+        player.setPos({15, 180});
         player.setSize({1.75, 1.75});
         TextBox.setFont(getFont(FontID::rs));
         

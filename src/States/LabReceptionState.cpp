@@ -65,6 +65,8 @@ namespace State
                 player.addCollidable(std::move(_Box));
             }
         }
+        m_ViewPort = std::make_unique<sf::View>(sf::Rect<float>(0, 0, Display::WIDTH, Display::HEIGHT));
+        Display::getWindow().setView(*m_ViewPort);
     }
 
     void LabReceptionState::input(const sf::Event& e)

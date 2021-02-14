@@ -50,7 +50,8 @@ namespace State
     }
 
     LabEntryState::LabEntryState(Application &application) 
-    : StateBase (application), player(application)
+    : StateBase (application),
+      player(application)
     {
         this->m_labEntry.push_back({1.4, this->getTexture(TextureID::labEntry)});
         this->m_animSprite.setTexture(&this->getTexture(TextureID::player));
@@ -69,7 +70,7 @@ namespace State
             this->m_anim.addFrame({i * 31, 0, 31, 31}, 0.1);
         this->m_viewPort = std::make_unique<sf::View>(sf::Rect<float>(200, 0, 1080, 720));
         Display::getWindow().setView(*this->m_viewPort);
-        player.setSize(sf::Vector2<float>(1.25, 1.25));
+        player.setSize(sf::Vector2<float>(1.75, 1.75));
     }
 
     void LabEntryState::input(const sf::Event& e)
@@ -83,9 +84,7 @@ namespace State
 
     void LabEntryState::update(float dt)
     {
-        
-
-        if (player.getPos().intersects(world->getRect(6)))
+        if (player.getPos().intersects(world->getRect(5)))
             this->m_p_application->pushState(std::make_unique<State::LabReceptionState>(*m_p_application));
         m_animSprite.setTextureRect(m_anim.getFrame());
         player.update(dt);
