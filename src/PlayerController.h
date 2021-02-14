@@ -41,6 +41,9 @@ namespace State {
         void input();
         void update(float dt);
         void draw();
+        sf::Rect<float> getPos();
+        void setPos(sf::Vector2<float> pos);
+        void setSize(sf::Vector2<float> size);
     };
 }
 

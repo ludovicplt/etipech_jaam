@@ -7,6 +7,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
+#include <iostream>
+
 template<typename Resource, typename Enum>
 class ResourceManager
 {
