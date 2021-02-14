@@ -1,0 +1,4 @@
+Name,      PosX, PosY, SizeX, SizeY, SpriteSize, Sprite, Collidable
+bonjour,   25,   30,   31,    10,    1,          3,      1
+au revoir, 33,   45,   13,    20,    1,          3,      1
+toto,      100,  90,   40,    20,    1,          3,      1
