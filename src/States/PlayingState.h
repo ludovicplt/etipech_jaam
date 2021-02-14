@@ -4,6 +4,7 @@
 #include "StateBase.h"
 
 #include "../Animation.h"
+#include "../PlayerController.h"
 
 namespace State
 {
@@ -21,6 +22,7 @@ namespace State
             sf::RectangleShape  m_animSprite;
             Animation           m_anim;
             sf::Text            m_text;
+            PlayerController player;
     };
 }
 
