@@ -6,6 +6,7 @@
 
 #include "MenuState.h"
 #include "PlayingState.h"
+#include "PastTacosCity.h"
 
 #include "../Display.h"
 #include "../Application.h"
@@ -69,7 +70,7 @@ namespace State {
     {
         switch (option) {
             case chosenOption::play:
-                m_p_application->pushState(std::make_unique<State::Playing>(*m_p_application));
+                m_p_application->pushState(std::make_unique<State::PastTacosCity>(*m_p_application));
                 break;
             case chosenOption::option:
                 // TODO

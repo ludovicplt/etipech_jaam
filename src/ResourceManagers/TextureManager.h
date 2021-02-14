@@ -14,8 +14,6 @@ enum class TextureID
     TacosCity = 3,
     Office = 4,
     player = 10,
-    player,
-    Office,
     background,
     buttons
 };
