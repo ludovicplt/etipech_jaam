@@ -1,0 +1,9 @@
+Name,                 PosX, PosY, SizeX, SizeY, SpriteSize, Sprite, Collidable
+BlockUp,              0,    150,    10000,   10,    1,             999,      1
+Box,                  440,    510,    360,   600,    1,             999,      1
+Door1 Y+ 10,             165,   710,    275,   10,    1,             999,      1
+Door2 Y+ 10,             800,   710,    275,   10,    1,             999,      1
+BlockLeft,              155,   0,    10,   1000,    1,             999,      1
+BlockRight,              1075,   0,    10,   1000,    1,             999,      1
+Servers,               550,     150,   1000,  50,    1,            999,        1
+Chair,                 550,     150,   150,  100,    1,            999,        1
