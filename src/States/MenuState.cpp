@@ -29,6 +29,11 @@ namespace State {
         _playButton.setPosition(sf::Vector2f(800, 100.f));
         _optionButton.setPosition(sf::Vector2f(800, 300.f));
         _quitButton.setPosition(sf::Vector2f(800, 500.f));
+
+        _music.openFromFile("../Res/Sounds/sweden.ogg");
+        _music.setLoop(true);
+        _music.setVolume(50);
+        _music.play();
     }
 
     void Menu::switchOptionUp()
@@ -71,6 +76,7 @@ namespace State {
     {
         switch (option) {
             case chosenOption::play:
+                _music.stop();
                 m_p_application->pushState(std::make_unique<State::SpawnState>(*m_p_application));
                 break;
             case chosenOption::option:

@@ -32,6 +32,7 @@ namespace State {
         sf::Sprite _optionButton;
         sf::Sprite _quitButton;
         sf::Sprite _background;
+        sf::Music _music;
 
         void switchOptionUp();
         void switchOptionDown();
