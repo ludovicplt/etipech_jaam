@@ -1,4 +1,5 @@
 #include "SplashScreen.h"
+#include "MenuState.h"
 
 #include "../Display.h"
 #include "../Application.h"
@@ -95,7 +96,7 @@ namespace State
             }
             Display::draw(m_fadeSprite);
         } else {
-            m_p_application->pushState(std::make_unique<State::Playing>(*m_p_application));
+            m_p_application->pushState(std::make_unique<State::Menu>(*m_p_application));
         }
     }
 

@@ -2,11 +2,10 @@
 
 TextureManager::TextureManager()
 {
-    std::string path ("../Res/Textures/");
+    const std::string path ("../Res/Textures/");
 
     registerResource(TextureID::splashSFML, path + "Splash/SFML.png");
     registerResource(TextureID::splashMH, path + "Splash/risitas.png");
     registerResource(TextureID::arrowTest, path + "Arrows.png");
-    registerResource(TextureID::test, path + "test.png");
-    registerResource(TextureID::character, path + "personnage.png");
+    registerResource(TextureID::player, path + "player.png");
 }

@@ -18,13 +18,15 @@ namespace Display
 
 
     void update ();
-    void clear  (const sf::Color& colour = {0, 0, 0});
+    void clear  (const sf::Color& colour = {255, 255, 255});
 
 
     void draw(const sf::Drawable& drawable);
 
 
     void pollEvents(State::StateBase& gameState);
+
+    sf::RenderWindow &getWindow();
 
     constexpr uint16_t WIDTH  = 1280;
     constexpr uint16_t HEIGHT = 720;
