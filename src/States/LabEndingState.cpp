@@ -9,20 +9,22 @@
 #include "../Display.h"
 #include "LabEndingState.h"
 #include "PlayingState.h"
+#include "../CollidableBox.h"
 
 namespace State 
 {
     LabEndingState::LabEnding::LabEnding(float time, const sf::Texture& back)
     {
         this->m_time = time;
-        this->m_sprite.setSize({Display::WIDTH, Display::HEIGHT});
+        this->m_sprite.setSize({1080, Display::HEIGHT});
+        this->m_sprite.setTextureRect({ 28, 6, 192, 113 });
+        this->m_sprite.setPosition(-4, 0);
         this->m_sprite.setTexture(&back);
     }
 
     LabEndingState::LabEnding::LabEnding(float time, const sf::Texture& back, const sf::SoundBuffer& sound)
     {
         this->m_time = time;
-        this->m_sprite.setSize({Display::WIDTH, Display::HEIGHT});
         this->m_sprite.setTexture(&back);
         //this->m_sound = std::make_unique<sf::Sound>(sound);
     }
@@ -47,11 +49,19 @@ namespace State
     LabEndingState::LabEndingState(Application &application) 
     : StateBase (application), player(application)
     {
+        player.setSize({2, 2});
+        player.setPos({400, 300});
         this->m_labEnding.push_back({1.4, this->getTexture(TextureID::labEnding)});
-        this->m_animSprite.setTexture(&this->getTexture(TextureID::player));
+        //this->m_animSprite.setTexture(&this->getTexture(TextureID::player));
 
-        for (int i = 0; i < 4; i++)
-            this->m_anim.addFrame({i * 31, 0, 31, 31}, 0.1);
+        world = std::make_unique<WorldObject::WorldLoader>("../src/maps/LabEnding.csv", application);
+        for (int i = 0; i < world->getMapSize(); i++) {
+            if (world->getIsCollidable(i) == true) {
+                std::unique_ptr<Objects::CollidableBox> _Box(new Objects::CollidableBox);
+                _Box->setBounds(world->getRect(i));
+                player.addCollidable(std::move(_Box));
+            }
+        }
     }
 
     void LabEndingState::input(const sf::Event& e)
@@ -65,14 +75,19 @@ namespace State
 
     void LabEndingState::update(float dt)
     {
-        m_animSprite.setTextureRect(m_anim.getFrame());
         player.update(dt);
+
+        if (player.getPos().intersects({ 165,   700,    275,   10 }) // first door
+            || player.getPos().intersects({ 800,   710,    275,   10 })) // second door
+        {
+            m_p_application->popState();
+        }
+
     }
 
     void LabEndingState::draw()
     {
         this->m_labEnding.front().draw();
-        Display::draw(m_animSprite);
         player.draw();
     }
 }
