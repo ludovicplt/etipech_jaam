@@ -11,14 +11,14 @@ namespace State
 
 namespace Display
 {
-    void init   (const std::string& name = "Window");
+    void init   (const std::string& name = "Forgotten");
 
 
     bool isOpen ();
 
 
     void update ();
-    void clear  (const sf::Color& colour = {255, 255, 255});
+    void clear  (const sf::Color& colour = {0, 0, 0});
 
 
     void draw(const sf::Drawable& drawable);
