@@ -6,6 +6,7 @@
 #include "Util/Random.h"
 
 #include "States/SpawnState.h"
+#include "States/MenuState.h"
 #include "States/LabEntryState.h"
 #include "States/LabReceptionState.h"
 #include "States/LabEndingState.h"
@@ -36,7 +37,7 @@ Application::Application()
     Display::init();
     Random::init();
 
-    pushState(std::make_unique<State::LabEndingState>(*this));
+    pushState(std::make_unique<State::Menu>(*this));
 }
 
 void Application::runMainLoop()
