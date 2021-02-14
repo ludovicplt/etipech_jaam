@@ -13,7 +13,9 @@
 #include "StateBase.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include "../WorldObject.h"
 #include "../Animation.h"
+#include "../CollidableBox.h"
 #include "../PlayerController.h"
 
 namespace State 
@@ -52,6 +54,8 @@ namespace State
             void update(float dt) override;
             void draw() override;
         private:
+            Objects::CollidableBox _box;
+            std::unique_ptr<WorldObject::WorldLoader> world;
             sf::RectangleShape m_animSprite;
             Animation m_anim;
             PlayerController player;
