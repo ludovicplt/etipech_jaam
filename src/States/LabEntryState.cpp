@@ -67,6 +67,9 @@ namespace State
 
         for (int i = 0; i < 4; i++)
             this->m_anim.addFrame({i * 31, 0, 31, 31}, 0.1);
+        this->m_viewPort = std::make_unique<sf::View>(sf::Rect<float>(200, 0, 1080, 720));
+        Display::getWindow().setView(*this->m_viewPort);
+        player.setSize(sf::Vector2<float>(1.25, 1.25));
     }
 
     void LabEntryState::input(const sf::Event& e)

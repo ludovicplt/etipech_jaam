@@ -78,7 +78,6 @@ namespace State
 
         for (int i = 0; i < 4; i++)
             this->m_anim.addFrame({i * 31, 0, 31, 31}, 0.1);
-        this->m_viewPort = std::make_unique<sf::View>(sf::FloatRect(100, 240, 1080, 720 / 1.5));
         world = std::make_unique<WorldObject::WorldLoader>("../src/maps/SpawnState.csv", application);
         for (int i = 0; i < this->world->getMapSize(); i++) {
             if (world->getIsCollidable(i) == true) {
@@ -88,6 +87,8 @@ namespace State
             }
         }
         player.setPos({140.093, 632.205});
+        this->m_viewPort = std::make_unique<sf::View>(sf::Rect<float>(100, 0, 1080, 720));
+        Display::getWindow().setView(*this->m_viewPort);
     }
 
     void SpawnState::input(const sf::Event& e)

@@ -66,6 +66,7 @@ namespace State
             sf::RectangleShape  m_fadeSprite;
             SplashState         m_currSplashState   = SplashState::Enter;
             int                 m_currAlphaValue    = 255;
+            std::unique_ptr<sf::View> m_viewPort;
     };
 }
 
