@@ -52,4 +52,9 @@ namespace Display
         }
     }
 
+    sf::RenderWindow &getWindow()
+    {
+        return window;
+    }
+
 }

@@ -9,11 +9,7 @@ namespace State
         StateBase(application)
     {
         m_background.setTexture(getTexture(TextureID::past2Background));
-        m_alexandroFlioVehicle.setTexture(getTexture(TextureID::alexandroFlioVehicle));
-        m_alexandroFlioSign.setTexture(getTexture(TextureID::alexandroFlioSign));
-        m_background.setPosition(0, -100);
-        m_alexandroFlioVehicle.setPosition(400, 60);
-        m_alexandroFlioSign.setPosition(300, 250);
+        m_background.setPosition(0, 0);
         Scaling::setSpriteWidthInPixels(m_background, 1200);
         Scaling::setSpriteWidthInPixels(m_alexandroFlioSign, 110);
         Scaling::setSpriteWidthInPixels(m_alexandroFlioVehicle, 415);

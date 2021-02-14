@@ -10,9 +10,8 @@ enum class TextureID
 {
     splashSFML,
     splashMH,
-
     arrowTest,
-
+    player,
     alexandroFlioSign,
     alexandroFlioVehicle,
     past2Background
