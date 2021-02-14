@@ -11,13 +11,17 @@ enum class TextureID
     splashSFML,
     splashMH,
     arrowTest,
+    TacosCity = 3,
+    Office = 4,
+    player = 10,
+    background,
+    buttons,
     sky,
     buildings,
     road,
-    player,
     labEntry,
     labReception,
-    labEnding,
+    labEnding
 };
 
 class TextureManager : public ResourceManager<sf::Texture, TextureID>

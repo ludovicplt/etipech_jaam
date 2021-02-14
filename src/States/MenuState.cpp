@@ -6,6 +6,7 @@
 
 #include "MenuState.h"
 #include "PlayingState.h"
+#include "PastTacosCity.h"
 
 #include "../Display.h"
 #include "../Application.h"
@@ -15,18 +16,19 @@ namespace State {
     Menu::Menu(Application& application) :
             StateBase (application)
     {
-        _playButton.setSize(sf::Vector2f(200.f, 100.f));
-        _playButton.setFillColor(sf::Color::Blue);
-        _playButton.setPosition(sf::Vector2f(5.f, 0.f));
-        _playButton.setOutlineColor(sf::Color::White);
-        _optionButton.setSize(sf::Vector2f(200.f, 100.f));
-        _optionButton.setFillColor(sf::Color::Red);
-        _optionButton.setPosition(sf::Vector2f(5.f, 105.f));
-        _optionButton.setOutlineColor(sf::Color::White);
-        _quitButton.setSize(sf::Vector2f(200.f, 100.f));
-        _quitButton.setFillColor(sf::Color::Green);
-        _quitButton.setPosition(sf::Vector2f(5.f, 210.f));
-        _quitButton.setOutlineColor(sf::Color::White);
+        _background.setTexture(getTexture(TextureID::background));
+
+        _playButton.setTexture(getTexture(TextureID::buttons));
+        _optionButton.setTexture(getTexture(TextureID::buttons));
+        _quitButton.setTexture(getTexture(TextureID::buttons));
+
+        _playButton.setTextureRect({0, 0, 354, 123});
+        _optionButton.setTextureRect({0, 123 + 49, 354, 123});
+        _quitButton.setTextureRect({0, 123 + 49 + 123 + 49, 354, 123});
+
+        _playButton.setPosition(sf::Vector2f(800, 100.f));
+        _optionButton.setPosition(sf::Vector2f(800, 300.f));
+        _quitButton.setPosition(sf::Vector2f(800, 500.f));
     }
 
     void Menu::switchOptionUp()
@@ -121,7 +123,7 @@ namespace State {
         }
     }
 
-    bool Menu::mouseIntersectsWithRectangle(const sf::RectangleShape &shape, const sf::Vector2f &cursorPos) const
+    bool Menu::mouseIntersectsWithRectangle(const sf::Sprite &shape, const sf::Vector2f &cursorPos) const
     {
         return shape.getGlobalBounds().contains(cursorPos);
     }
@@ -163,14 +165,15 @@ namespace State {
 
     void Menu::update(float dt)
     {
-        _selected == chosenOption::play ? _playButton.setOutlineThickness(5) : _playButton.setOutlineThickness(0);
-        _selected == chosenOption::option ? _optionButton.setOutlineThickness(5) : _optionButton.setOutlineThickness(0);
-        _selected == chosenOption::quit ? _quitButton.setOutlineThickness(5) : _quitButton.setOutlineThickness(0);
+        _selected == chosenOption::play ? _playButton.setTextureRect({354 + 48, 0, 354, 123}) : _playButton.setTextureRect({0, 0, 354, 123});
+        _selected == chosenOption::option ? _optionButton.setTextureRect({354 + 48, 123 + 49, 354, 123}) : _optionButton.setTextureRect({0, 123 + 49, 354, 123});
+        _selected == chosenOption::quit ? _quitButton.setTextureRect({354 + 48, 123 + 49 + 123 + 49, 354, 123}) : _quitButton.setTextureRect({0, 123 + 49 + 123 + 49, 354, 123});
     }
 
     void Menu::draw()
     {
         Display::clear();
+        Display::draw(_background);
         Display::draw(_playButton);
         Display::draw(_optionButton);
         Display::draw(_quitButton);

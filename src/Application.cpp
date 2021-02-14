@@ -10,6 +10,10 @@
 #include "States/LabEntryState.h"
 #include "States/LabReceptionState.h"
 #include "States/LabEndingState.h"
+#include "States/SplashScreen.h"
+
+#include "States/PastOffice.h"
+#include "States/PastTacosCity.h"
 
 namespace
 {
@@ -43,6 +47,8 @@ Application::Application()
 void Application::runMainLoop()
 {
     sf::Clock c;
+
+    pushState(std::make_unique<State::SplashScreen>(*this));
     while (Display::isOpen()) {
         auto dt = c.restart().asSeconds();
 
