@@ -3,7 +3,7 @@
 #include "../ResourceManagers/ResourceManager.h"
 #include "../Application.h"
 #include "../Display.h"
-
+#include "PastTacosCity.h"
 
 
 namespace State
@@ -38,9 +38,13 @@ namespace State
         Display::getWindow().setView(*viewPort);
         for (int i = 0; i < Entity.getSize(); i++) {
             if (Entity.IsIntersecting(player.getPos(), Entity.getPos(i)) && KEY_PRESSED(e, sf::Keyboard::Enter)) {
-                TextBox.setString(Entity.getSpeech(i));
+                if (Entity.getName(i) == "warp")
+                    m_p_application->pushState(std::make_unique<State::PastTacosCity>(*m_p_application));
+                else
+                    TextBox.setString(Entity.getSpeech(i));
             }
         }
+        player.displayPos();
     }
 
     void PastOffice::input()

@@ -27,7 +27,6 @@ namespace Entity {
             void SetSpeech(const std::string &Speech);
             const std::string GetSpeech(void) const;
             void SetName(const std::string &Name);
-            const std::string GetName(void) const;
             EntityObject(void) {}
     };
 
@@ -64,6 +63,11 @@ namespace Entity {
             const std::string &getSpeech(int i)
             {
                 return (myPnj[i].Speech);
+            }
+
+            const std::string &getName(int i)
+            {
+                return (myPnj[i].Name);
             }
     };
 }

@@ -19,9 +19,4 @@ namespace Entity {
     {
         this->myEntity.Name = Name;
     }
-
-    const std::string EntityObject::GetName(void) const
-    {
-        return (this->myEntity.Name);
-    }
 }
