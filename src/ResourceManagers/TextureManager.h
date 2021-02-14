@@ -14,7 +14,10 @@ enum class TextureID
     sky,
     buildings,
     road,
-    player
+    player,
+    labEntry,
+    labReception,
+    labEnding,
 };
 
 class TextureManager : public ResourceManager<sf::Texture, TextureID>

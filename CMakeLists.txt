@@ -31,6 +31,9 @@ add_executable(${EXECUTABLE_NAME}
         src/States/PlayingState.cpp
         src/States/StateBase.cpp
         src/States/SpawnState.cpp
+        src/States/LabEntryState.cpp
+        src/States/LabReceptionState.cpp
+        src/States/LabEndingState.cpp
         src/ResourceManagers/FontManager.cpp
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp

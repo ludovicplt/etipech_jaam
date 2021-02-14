@@ -27,7 +27,7 @@ namespace State {
         Animation playerDownAnim;
         Animation playerRightAnim;
         Animation playerLeftAnim;
-        const float speed = 2000.f;
+        const float speed = 2500.f;
         bool requestMove = false;
     public:
         PlayerController(Application &app);

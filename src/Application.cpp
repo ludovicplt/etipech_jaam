@@ -6,6 +6,9 @@
 #include "Util/Random.h"
 
 #include "States/SpawnState.h"
+#include "States/LabEntryState.h"
+#include "States/LabReceptionState.h"
+#include "States/LabEndingState.h"
 
 namespace
 {
@@ -33,7 +36,7 @@ Application::Application()
     Display::init();
     Random::init();
 
-    pushState(std::make_unique<State::SpawnState>(*this));
+    pushState(std::make_unique<State::LabEndingState>(*this));
 }
 
 void Application::runMainLoop()

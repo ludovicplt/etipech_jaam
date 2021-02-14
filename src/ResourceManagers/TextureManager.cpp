@@ -11,4 +11,7 @@ TextureManager::TextureManager()
     registerResource(TextureID::buildings, path + "buildings.png");
     registerResource(TextureID::road, path + "road.png");
     registerResource(TextureID::player, path + "player.png");
+    registerResource(TextureID::labEntry, path + "lab_entry.png");
+    registerResource(TextureID::labReception, path + "lab_reception.png");
+    registerResource(TextureID::labEnding, path + "lab_ending.png");
 }

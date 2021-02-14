@@ -8,6 +8,7 @@
 #include "../Application.h"
 #include "../Display.h"
 #include "SpawnState.h"
+#include "LabEntryState.h"
 #include "PlayingState.h"
 
 namespace State 
@@ -95,10 +96,12 @@ namespace State
 
     void SpawnState::draw()
     {
-         if (!m_spawn.empty())
+         if (!m_spawn.empty()) {
             for (int i = 0; i < this->m_spawn.size(); i++)
                 this->m_spawn[i].draw();
-        Display::draw(m_animSprite);
-        player.draw();
+            Display::draw(m_animSprite);
+            player.draw();
+        } //} else
+        //     this->m_p_application->pushState(std::make_unique<State::LabEntryState>(*m_p_application));
     }
 }
