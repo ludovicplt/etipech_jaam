@@ -20,7 +20,7 @@ namespace Objects
         sf::RectangleShape box;
         void draw() const
         {
-        //    Display::draw(box);
+            Display::draw(box);
         }
 
         inline void setBounds(sf::Rect<float> bounds)

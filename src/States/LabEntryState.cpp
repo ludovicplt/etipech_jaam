@@ -7,8 +7,13 @@
 
 #include "../Application.h"
 #include "../Display.h"
+#include "../CollidableBox.h"
+#include "../WorldObject.h"
+#include "../ResourceManagers/ResourceManager.h"
+#include "LabReceptionState.h"
 #include "LabEntryState.h"
 #include "PlayingState.h"
+#include <iostream>
 
 namespace State 
 {
@@ -50,6 +55,16 @@ namespace State
         this->m_labEntry.push_back({1.4, this->getTexture(TextureID::labEntry)});
         this->m_animSprite.setTexture(&this->getTexture(TextureID::player));
 
+        
+        world = std::make_unique<WorldObject::WorldLoader>("../src/maps/LabEntry.csv", application);
+        for (int i = 0; i < world->getMapSize(); i++) {
+            if (world->getIsCollidable(i) == true) {
+                std::unique_ptr<Objects::CollidableBox> _Box(new Objects::CollidableBox);
+                _Box->setBounds(world->getRect(i));
+                player.addCollidable(std::move(_Box));
+            }
+        }
+
         for (int i = 0; i < 4; i++)
             this->m_anim.addFrame({i * 31, 0, 31, 31}, 0.1);
     }
@@ -65,6 +80,10 @@ namespace State
 
     void LabEntryState::update(float dt)
     {
+        
+
+        if (player.getPos().intersects(world->getRect(6)))
+            this->m_p_application->pushState(std::make_unique<State::LabReceptionState>(*m_p_application));
         m_animSprite.setTextureRect(m_anim.getFrame());
         player.update(dt);
     }
