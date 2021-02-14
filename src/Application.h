@@ -16,6 +16,9 @@ class Application
 
         const ResourceHolder& getResources() const;
 
+        void setStatePlayerPos(sf::Vector2<float> pos) {
+            m_states.top()->setPlayerPos(pos);
+        }
         void pushState(std::unique_ptr<State::StateBase> state);
         void popState ();
 

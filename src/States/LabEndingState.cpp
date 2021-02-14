@@ -10,6 +10,7 @@
 #include "LabEndingState.h"
 #include "PlayingState.h"
 #include "../CollidableBox.h"
+#include "LabReceptionState.h"
 
 namespace State 
 {
@@ -78,9 +79,12 @@ namespace State
         player.update(dt);
 
         if (player.getPos().intersects({ 165,   700,    275,   10 }) // first door
-            || player.getPos().intersects({ 800,   710,    275,   10 })) // second door
+            || player.getPos().intersects({ 800,   700,    275,   10 })) // second door
         {
-            m_p_application->popState();
+            Application *app = m_p_application;
+            sf::Rect<float> pos = player.getPos();
+            app->popState();
+            app->setStatePlayerPos({pos.left, 20});
         }
 
     }
