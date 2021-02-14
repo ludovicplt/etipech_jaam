@@ -41,7 +41,7 @@ Application::Application()
     Display::init();
     Random::init();
 
-    //pushState(std::make_unique<State::Menu>(*this));
+    pushState(std::make_unique<State::Menu>(*this));
 }
 
 void Application::runMainLoop()
