@@ -48,7 +48,7 @@ void Application::runMainLoop()
 {
     sf::Clock c;
 
-    pushState(std::make_unique<State::LabEntryState>(*this));
+    pushState(std::make_unique<State::SpawnState>(*this));
     while (Display::isOpen()) {
         auto dt = c.restart().asSeconds();
 

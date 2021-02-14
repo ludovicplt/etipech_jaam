@@ -44,6 +44,11 @@ namespace State {
         sf::Rect<float> getPos();
         void setPos(sf::Vector2<float> pos);
         void setSize(sf::Vector2<float> size);
+
+        void displayPos(void)
+        {
+            std::cout << "<" << getPos().left << ", " << getPos().top << ">" << std::endl;
+        }
     };
 }
 
