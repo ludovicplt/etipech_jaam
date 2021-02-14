@@ -23,8 +23,7 @@ namespace State {
         void input();
         void update(float dt);
         void draw();
-        void t_draw();
-        void t_set();
+        void t_set(std::string speetch);
     };
 }
 
