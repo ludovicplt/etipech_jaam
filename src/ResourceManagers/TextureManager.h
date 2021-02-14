@@ -11,10 +11,9 @@ enum class TextureID
     splashSFML,
     splashMH,
     arrowTest,
-    player,
-    alexandroFlioSign,
-    alexandroFlioVehicle,
-    past2Background
+    TacosCity = 3,
+    Office = 4,
+    player = 10,
 };
 
 class TextureManager : public ResourceManager<sf::Texture, TextureID>

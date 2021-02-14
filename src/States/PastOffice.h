@@ -1,5 +1,5 @@
-#ifndef MYPROJECT_PASTTACOSCITY_H
-#define MYPROJECT_PASTTACOSCITY_H
+#ifndef MYPROJECT_PASTOFFICE_H
+#define MYPROJECT_PASTOFFICE_H
 
 #include "StateBase.h"
 #include "../PlayerController.h"
@@ -7,14 +7,14 @@
 #include "../WorldObject.h"
 
 namespace State {
-    class PastTacosCity : public StateBase {
+    class PastOffice : public StateBase {
     private:
         PlayerController player;
         Objects::CollidableBox _Box;
         std::unique_ptr<WorldObject::WorldLoader> world;
     public:
         std::unique_ptr<sf::View> viewPort;
-        PastTacosCity(Application& app);
+        PastOffice(Application& app);
 
         void input(const sf::Event& e);
         void input();

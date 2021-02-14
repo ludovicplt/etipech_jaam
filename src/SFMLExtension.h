@@ -31,6 +31,7 @@ inline std::ostream &operator <<(std::ostream &os, const sf::Rect<T> &obj)
     os << ", ";
     os << obj.height;
     os << ">";
+    return os;
 }
 
 #endif //MYPROJECT_SFMLEXTENSION_H

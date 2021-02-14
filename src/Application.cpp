@@ -7,6 +7,9 @@
 
 #include "States/SplashScreen.h"
 
+#include "States/PastOffice.h"
+#include "States/PastTacosCity.h"
+
 namespace
 {
     void calculateFPS()
@@ -39,6 +42,8 @@ Application::Application()
 void Application::runMainLoop()
 {
     sf::Clock c;
+
+    pushState(std::make_unique<State::PastTacosCity>(*this));
     while (Display::isOpen()) {
         auto dt = c.restart().asSeconds();
 

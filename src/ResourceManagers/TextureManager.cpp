@@ -7,8 +7,7 @@ TextureManager::TextureManager()
     registerResource(TextureID::splashSFML, path + "Splash/SFML.png");
     registerResource(TextureID::splashMH, path + "Splash/risitas.png");
     registerResource(TextureID::arrowTest, path + "Arrows.png");
-    registerResource(TextureID::alexandroFlioSign, path + "AlexandroFlioSign.png");
-    registerResource(TextureID::alexandroFlioVehicle, path + "AlexandroFlioVehicle.png");
-    registerResource(TextureID::past2Background, path + "PastCityBackground.png");
     registerResource(TextureID::player, path + "player.png");
+    registerResource(TextureID::Office, path + "Office.png");
+    registerResource(TextureID::TacosCity, path + "TacosCity.png");
 }

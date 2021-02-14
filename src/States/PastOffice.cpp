@@ -1,4 +1,4 @@
-#include "PastTacosCity.h"
+#include "PastOffice.h"
 #include "PlayingState.h"
 #include "../Application.h"
 #include "../Display.h"
@@ -7,15 +7,15 @@
 
 namespace State
 {
-    PastTacosCity::PastTacosCity(Application& application) :
-            StateBase (application),
-            player(application)
+    PastOffice::PastOffice(Application& application) :
+        StateBase (application),
+        player(application)
     {
-        player.setSize({1, 1});
+        player.setSize({1.75, 1.75});
         player.setPos({0, 180});
         viewPort = std::make_unique<sf::View>(sf::FloatRect(0, 0, 1080 / 2.2 - 50, 720 / 2.2 - 50));
         Display::getWindow().setView(*viewPort);
-        world = std::make_unique<WorldObject::WorldLoader>("../src/maps/TacosCity.csv", application);
+        world = std::make_unique<WorldObject::WorldLoader>("../src/maps/Office.csv", application);
         for (int i = 0; i < world->getMapSize(); i++) {
             if (world->getIsCollidable(i) == true) {
                 std::unique_ptr<Objects::CollidableBox> _Box(new Objects::CollidableBox);
@@ -25,31 +25,26 @@ namespace State
         }
     }
 
-    void PastTacosCity::input(const sf::Event& e)
+    void PastOffice::input(const sf::Event& e)
     {
         player.input(e);
         Display::getWindow().setView(*viewPort);
-
-        if (e.type == e.KeyPressed && e.key.code == sf::Keyboard::R)
-        {
-            m_p_application->pushState(std::make_unique<State::PastTacosCity>(*m_p_application));
-        }
     }
 
-    void PastTacosCity::input()
+    void PastOffice::input()
     {
     }
 
-    void PastTacosCity::update(float dt)
+    void PastOffice::update(float dt)
     {
         player.update(dt);
-        std::cout << "Pos: " << player.getPos().left << ", " << player.getPos().top << std::endl;
-        if (player.getPos().left >= 720 / 3 - 22.128455 && player.getPos().left < 1800)
-            viewPort->setCenter(player.getPos().left, viewPort->getCenter().y);
+        std::cout << "Pos: " << player.getPos().left << std::endl;
+        if (player.getPos().left >= 720 / 2.2 - 43.127)
+            viewPort->setCenter(player.getPos().left, (720 / 2.2 - 50) / 2);
         Display::getWindow().setView(*viewPort);
     }
 
-    void PastTacosCity::draw()
+    void PastOffice::draw()
     {
         for (int i = 0; i < world->getMapSize(); i++) {
             if (world->getSprite(i))

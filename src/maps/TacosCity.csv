@@ -1,0 +1,17 @@
+Name,                 PosX, PosY, SizeX, SizeY, SpriteSize, Sprite, Collidable
+Overview,             0,    0,    0,     0,     1.5,             3,      0
+BlockUpBuilding1,     0,    120,  250,   10,    1,             999,      1
+BlockUpAlejBG,        200,   70,  400,   10,    1,             999,      1
+BlockUpAlejFG,        290,   100,  175,   10,    1,             999,      1
+BlockUpBuilding2,     508,   120,  250,   10,    1,             999,      1
+BlockUpBuildingBG,    700,    70,  250,   10,    1,             999,      1
+BlockUpBuilding3,     900,   90,  190,   10,    1,             999,      1
+BlockUpBuilding3_1,   1100,  80,  10,   10,    1,             999,      1
+BlockUpBuilding3_2,   1110,  0,    10,   80,    1,             999,      1
+BlockUpBuilding4_3,   1360,  0,    10,   60,    1,             999,      1
+BlockUpBuilding4_2,   1370,  30,    10,   60,    1,             999,      1
+BlockUpBuilding4_1,   1375,  90,    900,   10,    1,             999,      1
+BlockUpRoad,          1100,  -10,  500,   10,    1,             999,      1
+BlockDown,            0,    283,  10000, 10,    1,             999,      1
+BlockLeft,          -10,    0,    10,    10000, 1,             999,      1
+BlockRight,          2015,    0,    10,    10000, 1,             999,      1

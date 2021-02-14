@@ -135,3 +135,18 @@ void State::PlayerController::draw()
         collider->draw();
     }
 }
+
+sf::Rect<float> State::PlayerController::getPos(void)
+{
+    return (playerSprite.getGlobalBounds());
+}
+
+void State::PlayerController::setPos(sf::Vector2<float> pos)
+{   
+    playerSprite.setPosition(pos);
+}
+
+void State::PlayerController::setSize(sf::Vector2<float> size)
+{
+    playerSprite.setScale(size);
+}
