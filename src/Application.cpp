@@ -8,6 +8,7 @@
 #include "States/SplashScreen.h"
 
 #include "States/PastOffice.h"
+#include "States/PastTacosCity.h"
 
 namespace
 {

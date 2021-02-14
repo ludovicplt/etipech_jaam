@@ -31,11 +31,13 @@ add_executable(${EXECUTABLE_NAME}
         src/States/PlayingState.cpp
         src/States/SplashScreen.cpp
         src/States/StateBase.cpp
+        src/States/PastTacosCity.cpp
         src/States/PastOffice.cpp
         src/ResourceManagers/FontManager.cpp
         src/ResourceManagers/ResourceManager.cpp
         src/ResourceManagers/SoundManager.cpp
         src/ResourceManagers/TextureManager.cpp
+        src/Util/Scaling.cpp
         src/States/MenuState.cpp
         src/EntityParser.cpp
         src/States/MenuState.h

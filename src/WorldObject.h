@@ -1,3 +1,6 @@
+#ifndef WORLDOBJECT_H_INCLUDED
+#define WORLDOBJECT_H_INCLUDED
+
 #include "csv.h"
 #include "ICollidable.h"
 #include <string>
@@ -86,3 +89,5 @@ namespace WorldObject {
             void draw() {};
     };
 }
+
+#endif

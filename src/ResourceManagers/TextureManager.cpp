@@ -9,6 +9,7 @@ TextureManager::TextureManager()
     registerResource(TextureID::arrowTest, path + "Arrows.png");
     registerResource(TextureID::player, path + "player.png");
     registerResource(TextureID::Office, path + "Office.png");
+    registerResource(TextureID::TacosCity, path + "TacosCity.png");
     registerResource(TextureID::background, path + "menu_fond.png");
     registerResource(TextureID::buttons, path + "buttons.png");
 }
