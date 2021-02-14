@@ -15,6 +15,8 @@
 #include <SFML/Audio.hpp>
 #include "../Animation.h"
 #include "../PlayerController.h"
+#include "../WorldObject.h"
+#include "../../src/CollidableBox.h"
 
 namespace State 
 {
@@ -52,6 +54,7 @@ namespace State
             void update(float dt) override;
             void draw() override;
         private:
+            std::unique_ptr<WorldObject::WorldLoader> world;
             sf::RectangleShape m_animSprite;
             Animation m_anim;
             PlayerController player;
@@ -59,6 +62,9 @@ namespace State
             sf::RectangleShape  m_fadeSprite;
             SplashState         m_currSplashState   = SplashState::Enter;
             int                 m_currAlphaValue    = 255;
+            std::unique_ptr<sf::View> m_viewPort;
+            Objects::CollidableBox _BoxBlock;
+
     };
 }
 

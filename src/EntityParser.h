@@ -1,6 +1,13 @@
+#ifndef ENTITY_H_INCLUDED
+#define ENTITY_H_INCLUDED
+
+
+
 #include "csv.h"
 #include <SFML/Graphics.hpp>
 #include <string>
+
+
 
 namespace Entity {
     class EntityObject {
@@ -60,4 +67,6 @@ namespace Entity {
             }
     };
 }
+#endif // ENTITY_H_INCLUDED
+
      

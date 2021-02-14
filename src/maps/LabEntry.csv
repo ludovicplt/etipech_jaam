@@ -1,0 +1,7 @@
+Name,                 PosX, PosY, SizeX, SizeY, SpriteSize, Sprite, Collidable
+topBlock,               0, 526, 10000, 10, 1, 999, 1
+Blockrup,               1256, 521, 10, 1000, 1, 999, 1
+topBlock,               0, 730, 10000, 10, 1, 999, 1
+topback,               -10, 0, 10, 10000, 1, 999, 1
+topBlock,               1225, 578,   10,   50, 1, 999, 1
+warp,                   1211, 578,  25,  75,  1, 999, 0 

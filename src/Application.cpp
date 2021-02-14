@@ -48,7 +48,6 @@ void Application::runMainLoop()
 {
     sf::Clock c;
 
-    pushState(std::make_unique<State::SplashScreen>(*this));
     while (Display::isOpen()) {
         auto dt = c.restart().asSeconds();
 
