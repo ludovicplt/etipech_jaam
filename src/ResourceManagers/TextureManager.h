@@ -12,7 +12,9 @@ enum class TextureID
     splashMH,
     arrowTest,
     player,
-    Office
+    Office,
+    background,
+    buttons
 };
 
 class TextureManager : public ResourceManager<sf::Texture, TextureID>
