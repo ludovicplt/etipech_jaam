@@ -17,6 +17,9 @@
 #include "../Animation.h"
 #include "../CollidableBox.h"
 #include "../PlayerController.h"
+#include "../EntityParser.h"
+
+
 
 namespace State 
 {

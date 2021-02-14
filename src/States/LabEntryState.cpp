@@ -10,8 +10,10 @@
 #include "../CollidableBox.h"
 #include "../WorldObject.h"
 #include "../ResourceManagers/ResourceManager.h"
+#include "LabReceptionState.h"
 #include "LabEntryState.h"
 #include "PlayingState.h"
+#include <iostream>
 
 namespace State 
 {
@@ -53,6 +55,7 @@ namespace State
         this->m_labEntry.push_back({1.4, this->getTexture(TextureID::labEntry)});
         this->m_animSprite.setTexture(&this->getTexture(TextureID::player));
 
+        
         world = std::make_unique<WorldObject::WorldLoader>("../src/maps/LabEntry.csv", application);
         for (int i = 0; i < world->getMapSize(); i++) {
             if (world->getIsCollidable(i) == true) {
@@ -77,13 +80,16 @@ namespace State
 
     void LabEntryState::update(float dt)
     {
+        
+
+        if (player.getPos().intersects(world->getRect(6)))
+            this->m_p_application->pushState(std::make_unique<State::LabReceptionState>(*m_p_application));
         m_animSprite.setTextureRect(m_anim.getFrame());
         player.update(dt);
     }
 
     void LabEntryState::draw()
     {
-        std::cout << player.getPos().top << std::endl;
         this->m_labEntry.front().draw();
         Display::draw(m_animSprite);
         player.draw();
